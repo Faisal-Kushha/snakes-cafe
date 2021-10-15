@@ -10,8 +10,10 @@ print(f"**  To quit at any time, type {quiting}  **")
 print("**************************************")
 print(" ")
 menu = [
-    {"choice": "Appetizers", "options": ["Wings", "Cookies", "Spring", "Rolls"]},
-    {"choice": "Entrees", "options": ["Salmon", "Steak", "Meat", "Tornado", "A Literal Garden"]},
+    {"choice": "Appetizers", "options": [
+        "Wings", "Cookies", "Spring", "Rolls"]},
+    {"choice": "Entrees", "options": [
+        "Salmon", "Steak", "Meat", "Tornado", "A Literal Garden"]},
     {"choice": "Desserts", "options": ["Ice Cream", "Cake", "Pie"]},
     {"choice": "Beverages", "options": ["Coffee", "Tea", "Unicorn Tears"]},
 ]
@@ -26,23 +28,22 @@ for i in range(len(menu)):
     print(" ")
 
 
-
 # The > character represents user input line and should be printed out with a trailing space, I got help with this from ==> StackOverFlow: https://stackoverflow.com/questions/8599440/new-line-for-input-in-python
 orders = []
 user_order = ""
-while user_order != "quit":
-    print("**************************************")
-    user_order = input(f"** What would you like to order? **\n>")
-
-    if user_order != 'quit':
-        orders.append(user_order)
-        
-    elif user_order == 'quit':
-        continue
-    print("**************************************")
-    print(f"** An order of {user_order} have been added to your list**")
-   
 print("**************************************")
+user_order = input(
+    f"What would you like to order? \n**************************************\n>")
+
+while user_order:
+    if user_order.lower() != 'quit':
+        orders.append(user_order)
+        print(
+            f"\n** {orders.count(user_order)} order of {user_order} have been added to your meal**\n")
+        user_order = input(f">")
+    else:
+        break
+print("\n**************************************")
 print("Your orders list")
 for x in range(len(orders)):
     print(orders[x], sep="\n")
