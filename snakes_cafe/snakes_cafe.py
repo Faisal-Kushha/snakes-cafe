@@ -1,6 +1,10 @@
 """
  An application for a restaurant menu that allow any client to order online
 """
+
+"""
+Once the program run, it will print an intro message, additionally the program will tell the user how to exit.
+"""
 quiting = "quit"
 print("**************************************")
 print("**    Welcome to the Snakes Cafe!   **")
@@ -18,8 +22,11 @@ menu = [
     {"choice": "Beverages", "options": ["Coffee", "Tea", "Unicorn Tears"]},
 ]
 
-# How to print a list of items, and each one of them will appear on a new line, I got help with this from GeekesforGeeks: https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways
+""" 
+How to print a list of items, and each one of them will appear on a new line, I got help with this from GeekesforGeeks: https://www.geeksforgeeks.org/print-lists-in-python-4-different-ways
 
+The loop will go through the menu and print as required
+"""
 for i in range(len(menu)):
     print(menu[i]["choice"])
     print("---------")
@@ -28,13 +35,20 @@ for i in range(len(menu)):
     print(" ")
 
 
-# The > character represents user input line and should be printed out with a trailing space, I got help with this from ==> StackOverFlow: https://stackoverflow.com/questions/8599440/new-line-for-input-in-python
+""" 
+The > character represents user input line and should be printed out with a trailing space, I got help with this from ==> StackOverFlow: https://stackoverflow.com/questions/8599440/new-line-for-input-in-python
+
+The program will ask the user for an order
+"""
 orders = []
 user_order = ""
 print("**************************************")
 user_order = input(
     f"What would you like to order? \n**************************************\n>")
 
+"""
+The program will print an acknowledgment, when a user enters an item.
+"""
 while user_order:
     if user_order.lower() != 'quit':
         orders.append(user_order)
